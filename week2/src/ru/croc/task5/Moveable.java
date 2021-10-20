@@ -1,0 +1,5 @@
+package ru.croc.task5;
+
+public interface Moveable {
+    void move(int dx, int dy);
+}
