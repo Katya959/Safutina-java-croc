@@ -5,6 +5,7 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) throws IOException {
+        //!!!Я нахожу суммарное количество просмотров только по историям тех пользователей, которых отобрала в пункте 1
         //Объявляем коснатнты, отвечающие за файл с названиями фильмов и их номерами в списке,
         //а также списке просмотренных фильмов всех пользователей
         final String FILMS = "/Users/ekaterinasafutina/Desktop/Lab4/Croc_week6/src/ru/croc/task14/Films.txt";
