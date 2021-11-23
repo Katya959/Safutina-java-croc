@@ -1,11 +1,24 @@
 package ru.croc.task13;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
 class DeleteBlackWords implements BlackListFilter {
-    public void filterComments(List<String> comments, Set<String> blackList) {
+    public void filterComments(List<String> comments0, Set<String> blackList0) {
+        List<String> comments = new ArrayList<>();
+        for (String comment: comments0) {
+            String comment1 = comment.toLowerCase();
+            comments.add(comment1);
+        }
+
+        Set<String> blackList = new HashSet<>();
+        for (String black: blackList0) {
+            String black1 = black.toLowerCase();
+            blackList.add(black1);
+        }
+
         //В данный arrayList будут добавляться все комментарии без запрещённых слов
         List<String> comments1 = new ArrayList<>();
         //Берем все слова-комментарии по очереди
@@ -25,8 +38,8 @@ class DeleteBlackWords implements BlackListFilter {
                 comments1.add(s);
         }
         //После проверки всех комментарием, исходный arrayList обнуляется.
-        comments.clear();
+        comments0.clear();
         //В arrayList, который был передан, записываем все данные, которые есть в comments.
-        comments.addAll(comments1);
+        comments0.addAll(comments1);
     }
 }
